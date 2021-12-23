@@ -1,5 +1,18 @@
-Testing
+from github_updates import git
+from github import Github
+# import pandas as pd
+# test = git('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',
+#          "analytics")
 
-Testing
 
-Testing!
+# test.update("/testfile.csv", "Testing github wrapper", "./test_commit.txt")
+
+# test.update_personal("Dash Data - stimmy1.csv", "Testing update", "test.csv")
+
+g = Github('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')
+user = g.get_user()
+repo = user.get_repo('testing')
+current = repo.get_contents('Dash Data - stimmy1.csv')
+infile = open('test_git.py', 'rb')
+repo.update_file(path=current.path, message='TESTING WRAPPER',
+                 content=infile.read(), sha=current.sha)
