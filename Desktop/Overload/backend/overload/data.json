@@ -1,0 +1,48 @@
+[
+ {"model": "workout.ExerciseClass",
+            "pk": 1,
+            "fields": {
+              "name": "Bench Press",
+              "position": "Lengthened",
+              "body_part": {
+                "model": "workout.BodyPart",
+                "pk": 1,
+                "fields": {
+                  "name": "Chest"
+                }
+              }
+            }
+        },
+        
+  ,{
+    "model": "workout.Workout",
+    "pk": 1,
+    "fields": {
+      "exercises": {
+        "model": "workout.ExerciseInstance",
+        "pk": 1,
+        "fields": {
+          "exercise_class": {
+            "model": "workout.ExerciseClass",
+            "pk": 1,
+            "fields": {
+              "name": "Bench Press",
+              "position": "Lengthened",
+              "body_part": {
+                "model": "workout.BodyPart",
+                "pk": 1,
+                "fields": {
+                  "name": "Chest"
+                }
+              }
+            }
+          },
+          "date": "12/08/2000",
+          "sequence": 1,
+          "weight": 185,
+          "reps": 6
+        }
+      }
+    }
+  }
+]
